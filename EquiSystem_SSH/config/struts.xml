@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+	
+<struts>	
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<!-- <constant name="struts.devMode" value="true"/> -->
+	<constant name="struts.multipart.maxSize" value="1000000000"></constant><!-- 设置上传大小 -->
+	
+	<package name="demo" extends="struts-default" namespace="/">
+		<!-- 登录 -->
+		<action name="LoginAction_*" class="loginAction" method="{1}">
+			<result name="admin">/admin/admin.jsp</result>
+			<result name="tea">/teacher/teacher.jsp</result>
+			<result name="stu">/student/student.jsp</result>
+			<result name="error" type="redirect">/login.jsp</result>
+
+			<allowed-methods>login,loginOut</allowed-methods>
+		</action>
+
+		
+		<!-- 下载、播放跳转的action  -->
+		<action name="DownLoadAction_*" class="com.action.UploadAction" method="{1}">
+			<result type="stream">
+				<param name="contentDisposition">attachment;filename=${filepathName}</param>
+				<param name="inputName">filepathStream</param>
+			</result>
+			<result name="video">video.jsp</result>
+			<allowed-methods>download, play</allowed-methods>
+		</action>
+		
+		
+	</package>
+	
+	
+	
+	
+	<!-- 与json界面交互数据用的包 -->
+	<package name="easyui" extends="json-default">
+		
+		<!-- 实验室预约 -->
+		<action name="LabBespeakAction_*" class="labBespeakAction" method="{1}">
+			<result type="json">
+				<!-- 这句让界面不弹出下载框 -->
+				<param name="contentType">text/html</param>
+				<param name="root">result</param>
+			</result>
+			<allowed-methods>getList,query,add,update,delete</allowed-methods>
+		</action>
+		
+		<!-- 实验室课程预约 -->
+		<action name="CourseTableAction_*" class="courseTableActoin" method="{1}">
+			<result type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">result</param>
+			</result>
+			<allowed-methods>getList,add,update,delete</allowed-methods>
+		</action>
+		
+		<!-- 实验室简介 -->
+		<action name="LabEquiAction_*" class="labEquiAction" method="{1}">
+			<result type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">result</param>
+			</result>
+			<allowed-methods>getList,add,update,delete</allowed-methods>
+		</action>
+		
+		<!-- 竞赛项目 -->
+		<action name="CompProjectAction_*" class="compProjectAction" method="{1}">
+			<result type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">result</param> 
+			</result>
+			<allowed-methods>add,delete,update,getList</allowed-methods>
+		</action>
+		
+		<!-- 竞赛项目 -->
+		<action name="InnoProjectAction_*" class="innoProjectAction" method="{1}">
+			<result type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">result</param> 
+			</result>
+			<allowed-methods>add,delete,update,getList</allowed-methods>
+		</action>
+		
+		<!-- 设备借用 -->
+		<action name="EquiBorrowAction_*" class="equiBorrowAction" method="{1}">
+			<result type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">result</param> 
+			</result>
+			<allowed-methods>add,delete,update,getListByUser,getListByData,returnEqui</allowed-methods>
+		</action>
+		
+		<!-- 设备保修 -->
+		<action name="EquiRepairAction_*" class="equiRepairAction" method="{1}">
+			<result type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">result</param> 
+			</result>
+			<allowed-methods>getList,add,delete,update</allowed-methods>
+		</action>
+		
+		<!-- 教室设备 -->
+		<action name="RoomEquiAction_*" class="roomEquiAction" method="{1}">
+			<result type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">result</param> 
+			</result>
+			<allowed-methods>getList,add,delete,update</allowed-methods>
+		</action>
+		
+		<!-- 设备预采购 -->
+		<action name="EquiPayListAction_*" class="com.action.EquiPayListAction" method="{1}">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<allowed-methods>listEquiPaylist,addEquiPaylist,updatePaylist,deletePaylist,listAllPaylist</allowed-methods>
+		</action>
+		
+		<!-- 设备领取登记 -->
+		<action name="EquiGetAction_*" class="com.action.EquiGetAction" method="{1}">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<allowed-methods>equiGetList,addEquiGet,updateEquiGet,deleteEquiGet</allowed-methods>
+		</action>
+		
+		<!-- 书架-->
+		<action name="BookAction_*" class="bookAction" method="{1}">
+			<result type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">result</param> 
+			</result>
+			<allowed-methods>add,update,delete,getListByData,getList</allowed-methods>
+		</action>
+		
+		<!-- 图书借阅-->
+		<action name="BookBorrowAction_*" class="bookBorrowAction" method="{1}">
+			<result type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">result</param> 
+			</result>
+			<allowed-methods>getList,add,delete,update_yes,update_no,update_return</allowed-methods>
+		</action>
+		
+		<!-- 账号管理 -->
+		<action name="ManageAction_*" class="manageAction" method="{1}">
+			<result type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">result</param>
+			</result>
+			<allowed-methods>getList,add,delete,update,updatePwd</allowed-methods>
+		</action>
+		
+		<!-- 实验楼文件上传 -->
+		<action name="file_*" class="uploadAction" method="{1}">
+			<result type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">result</param>
+			</result>
+			<result name="list">/file/download.jsp</result>
+			<result name="video">/file/videolist.jsp</result>
+			<allowed-methods>upload,getList,getListSession,update,delete,getVideoListSession</allowed-methods>
+		</action>
+
+
+		<!-- 实验报告上传 -->
+		<action name="ExperimentReportAction_*" class="experimentReportAction" method="{1}">
+			<result type="json">
+				<param name="contentType">text/html</param>
+				<param name="root">result</param>
+			</result>
+			<allowed-methods>getList,add,update,delete,upload</allowed-methods>
+		</action>
+		<!-- 实验报告下载 -->
+		<action name="ExperimentReportDownload_*" class="experimentReportAction" method="{1}">
+			<result type="stream">
+				<param name="contentDisposition">attachment;filename=${filepathName}</param>
+				<param name="inputName">filepathStream</param>
+			</result>
+			<allowed-methods>download</allowed-methods>
+		</action>
+		
+	</package>
+	
+	
+</struts>

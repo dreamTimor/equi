@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-12-6 16:02:38 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bean.Equi_borrow" table="EQUI_BORROW">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="model" type="java.lang.String">
+            <column name="MODEL" />
+        </property>
+        <property name="num" type="int">
+            <column name="NUM" />
+        </property>
+        <property name="unit" type="java.lang.String">
+            <column name="UNIT" />
+        </property>
+        <property name="borrower" type="java.lang.String">
+            <column name="BORROWER" />
+        </property>
+        <property name="occupation" type="java.lang.String">
+            <column name="OCCUPATION" />
+        </property>
+        <property name="state" type="int">
+            <column name="STATE" />
+        </property>
+        <property name="return_status" type="java.lang.String">
+            <column name="RETURN_STATUS" />
+        </property>
+        <property name="lendtime" type="java.util.Date">
+            <column name="LENDTIME" />
+        </property>
+        <property name="borrowtime" type="java.util.Date">
+            <column name="BORROWTIME" />
+        </property>
+        <property name="truetime" type="java.util.Date">
+            <column name="TRUETIME" />
+        </property>
+        <property name="uid" type="int">
+            <column name="UID" />
+        </property>
+    </class>
+</hibernate-mapping>

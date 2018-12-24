@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-11-24 3:43:59 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bean.Equi_paylist" table="EQUI_PAYLIST">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="model" type="java.lang.String">
+            <column name="MODEL" />
+        </property>
+        <property name="num" type="int">
+            <column name="NUM" />
+        </property>
+        <property name="unit" type="java.lang.String">
+            <column name="UNIT" />
+        </property>
+        <property name="applicant" type="java.lang.String">
+            <column name="APPLICANT" />
+        </property>
+        <property name="uid" type="int">
+            <column name="uid" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" />
+        </property>
+        <property name="ifpass" type="java.lang.String">
+            <column name="ifpass" />
+        </property>
+        <property name="applydate" type="java.sql.Date">
+            <column name="applydate" />
+        </property>
+        <property name="passdate" type="java.sql.Date">
+            <column name="passdate" />
+        </property>
+    </class>
+</hibernate-mapping>

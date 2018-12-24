@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-11-24 3:43:59 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bean.Equi_repair" table="EQUI_REPAIR">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="rep_people" type="java.lang.String">
+            <column name="REP_PEOPLE" />
+        </property>
+        <property name="time" type="java.sql.Date">
+            <column name="TIME" />
+        </property>
+        <property name="reson" type="java.lang.String">
+            <column name="RESON" />
+        </property>
+        <property name="way" type="java.lang.String">
+            <column name="WAY" />
+        </property>
+        <property name="place" type="java.lang.String">
+            <column name="PLACE" />
+        </property>
+        <property name="solve_people" type="java.lang.String">
+            <column name="SOLVE_PEOPLE" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+    </class>
+</hibernate-mapping>

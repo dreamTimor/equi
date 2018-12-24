@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-12-14 16:35:33 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bean.Book_borrow" table="BOOK_BORROW">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        
+        <property name="booknum" type="int">
+            <column name="BOOKNUM" />
+        </property>
+        <property name="borrowtime" type="java.util.Date">
+            <column name="BORROWTIME" />
+        </property>
+        <property name="returntime" type="java.util.Date">
+            <column name="RETURNTIME" />
+        </property>
+        <property name="actualtime" type="java.util.Date">
+            <column name="ACTUALTIME" />
+        </property>
+        <property name="is_succeed" type="java.lang.String">
+            <column name="IS_SUCCEED" />
+        </property>
+        
+        <!-- fetch="join" 要放在前面，同时要用到not-null创建索引， 才能指定非主键属性作为外键 -->
+       	<many-to-one name="user" column="USER" class="com.bean.User" fetch="join" not-null="true" property-ref="username" />
+       	<many-to-one name="book" column="BOOK" class="com.bean.Book" fetch="join" not-null="true" property-ref="bookname" />
+        
+    </class>
+</hibernate-mapping>

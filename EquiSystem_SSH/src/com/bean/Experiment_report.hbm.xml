@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-12-18 19:48:52 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bean.Experiment_report" table="EXPERIMENT_REPORT">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="score" type="java.lang.String">
+            <column name="SCORE" />
+        </property>
+        <property name="course" type="java.lang.String">
+            <column name="COURSE" />
+        </property>
+        <property name="stu_name" type="java.lang.String">
+            <column name="STU_NAME" />
+        </property>
+        <property name="stu_id" type="java.lang.String">
+            <column name="STU_ID" />
+        </property>
+        <property name="cls" type="java.lang.String">
+            <column name="CLS" />
+        </property>
+        <property name="inspector" type="java.lang.String">
+            <column name="INSPECTOR" />
+        </property>
+        <property name="filename" type="java.lang.String">
+            <column name="FILENAME" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-11-24 3:43:59 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bean.Lend_record" table="LEND_RECORD">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="no" type="java.lang.String">
+            <column name="NO" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="lendtime" type="java.sql.Date">
+            <column name="LENDTIME" />
+        </property>
+        <property name="borrowtime" type="java.sql.Date">
+            <column name="BORROWTIME" />
+        </property>
+        <property name="truetime" type="java.sql.Date">
+            <column name="TRUETIME" />
+        </property>
+        <property name="isreturn" type="java.lang.String">
+            <column name="ISRETURN" />
+        </property>
+        <property name="book_name" type="java.lang.String">
+            <column name="BOOK_NAME" />
+        </property>
+    </class>
+</hibernate-mapping>

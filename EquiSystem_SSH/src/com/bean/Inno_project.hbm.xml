@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-11-24 3:43:59 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bean.Inno_project" table="INNO_PROJECT">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="level" type="java.lang.String">
+            <column name="LEVEL" />
+        </property>
+        <property name="type" type="java.lang.String">
+            <column name="TYPE" />
+        </property>
+        <property name="charger" type="java.lang.String">
+            <column name="CHARGER" />
+        </property>
+        <property name="teacher" type="java.lang.String">
+            <column name="TEACHER" />
+        </property>
+        <property name="stu_num" type="int">
+            <column name="STU_NUM" />
+        </property>
+        <property name="bor_equi" type="java.lang.String">
+            <column name="BOR_EQUI" />
+        </property>
+        <property name="starttime" type="java.sql.Date">
+            <column name="STARTTIME" />
+        </property>
+        <property name="endtime" type="java.sql.Date">
+            <column name="ENDTIME" />
+        </property>
+        <property name="funds" type="int">
+            <column name="FUNDS" />
+        </property>
+        <property name="proinfo" type="java.lang.String">
+            <column name="PROINFO" />
+        </property>
+        <property name="memberinfo" type="java.lang.String">
+            <column name="MEMBERINFO" />
+        </property>
+    </class>
+</hibernate-mapping>

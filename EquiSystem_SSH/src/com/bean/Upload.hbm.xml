@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-12-19 22:53:45 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bean.Upload" table="UPLOAD">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="username" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="filename" type="java.lang.String">
+            <column name="FILENAME" />
+        </property>
+        <property name="uploadTime" type="java.util.Date">
+            <column name="UPLOADTIME" />
+        </property>
+        <property name="fileType" type="int">
+            <column name="FILETYPE" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-11-25 23:53:29 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bean.Comp_project" table="COMP_PROJECT">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="inspector" type="java.lang.String">
+            <column name="INSPECTOR" />
+        </property>
+        <property name="members" type="java.lang.String">
+            <column name="MEMBERS" />
+        </property>
+        <property name="bor_equi" type="java.lang.String">
+            <column name="BOR_EQUI" />
+        </property>
+        <property name="enter_time" type="java.sql.Date">
+            <column name="ENTER_TIME" />
+        </property>
+        <property name="funds" type="int">
+            <column name="FUNDS" />
+        </property>
+        <property name="is_attend" type="java.lang.String">
+            <column name="IS_ATTEND" />
+        </property>
+        <property name="award" type="java.lang.String">
+            <column name="AWARD" />
+        </property>
+    </class>
+</hibernate-mapping>

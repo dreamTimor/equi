@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-12-11 19:56:17 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bean.Lab_bespeak" table="LAB_BESPEAK">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="people" type="java.lang.String">
+            <column name="PEOPLE" />
+        </property>
+        <property name="room" type="java.lang.String">
+            <column name="ROOM" />
+        </property>
+        <property name="usetime" type="java.util.Date">
+            <column name="USETIME" />
+        </property>
+        <property name="node" type="java.lang.String">
+            <column name="NODE" />
+        </property>
+        <property name="user_explain" type="java.lang.String">
+            <column name="USER_EXPLAIN" />
+        </property>
+        <property name="occupation" type="java.lang.String">
+            <column name="OCCUPATION" />
+        </property>
+        <property name="is_succeed" type="java.lang.String">
+            <column name="IS_SUCCEED" />
+        </property>
+        <property name="bespeak_uid" type="int">
+            <column name="BESPEAK_UID" />
+        </property>
+    </class>
+</hibernate-mapping>
